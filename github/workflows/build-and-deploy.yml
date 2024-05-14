@@ -1,4 +1,4 @@
-name: Build and Push Docker Image
+name: Збірка та публікація Docker-зображення
 
 on:
   push:
@@ -10,13 +10,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Вилучення репозиторію
         uses: actions/checkout@v2
 
-      - name: Set up Docker Buildx
+      - name: Налаштування Docker Buildx
         uses: docker/setup-buildx-action@v1
 
-      - name: Build and push Docker image
+      - name: Збірка та публікація Docker-зображення
         uses: docker/build-push-action@v2
         with:
           context: .
